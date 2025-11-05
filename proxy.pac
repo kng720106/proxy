@@ -75,6 +75,10 @@ function FindProxyForURL(url, host) {
                 dnsDomainIs(host, "docs.google.com") ||
                 dnsDomainIs(host, "classroom.google.com") ||
                 dnsDomainIs(host, "mail.google.com") ||
+                dnsDomainIs(host, "ogs.google.com") ||
+                dnsDomainIs(host, "www.toshin-kakomon.com") ||
+                dnsDomainIs(host, "drive.google.com") ||
+                dnsDomainIs(host, "chatgpt.com") ||
 
 
 		//IP Address List
