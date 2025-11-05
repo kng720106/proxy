@@ -1,0 +1,3 @@
+acl target_sites dstdomain .example.com
+deny_info http://redirect.example.org/ target_sites
+http_access deny target_sites
