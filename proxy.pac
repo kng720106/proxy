@@ -91,9 +91,9 @@ function FindProxyForURL(url, host) {
                 dnsDomainIs(host, "people-pa.clients6.google.com") ||
                 dnsDomainIs(host, "appsgrowthpromo-pa.clients6.google.com") ||
                 dnsDomainIs(host, "apis.google.com") ||
-                dnsDomainIs(host, "appsgrowthpromo-pa.clients6.google.com") ||
-
-
+                dnsDomainIs(host, "ogads-pa.clients6.google.com") ||
+                dnsDomainIs(host, "clients6.google.com") ||
+                dnsDomainIs(host, "fonts.googleapis.com") ||
 
 
 
