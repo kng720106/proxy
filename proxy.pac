@@ -94,7 +94,9 @@ function FindProxyForURL(url, host) {
                 dnsDomainIs(host, "ogads-pa.clients6.google.com") ||
                 dnsDomainIs(host, "clients6.google.com") ||
                 dnsDomainIs(host, "fonts.googleapis.com") ||
-
+                dnsDomainIs(host, "notifications.googleapis.com") ||
+                dnsDomainIs(host, "ci3.googleusercontent.com") ||
+                dnsDomainIs(host, "gmail.com") ||
 
 
 
