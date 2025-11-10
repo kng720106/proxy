@@ -79,6 +79,23 @@ function FindProxyForURL(url, host) {
                 dnsDomainIs(host, "www.toshin-kakomon.com") ||
                 dnsDomainIs(host, "drive.google.com") ||
                 dnsDomainIs(host, "chatgpt.com") ||
+                dnsDomainIs(host, "play.google.com") ||
+                dnsDomainIs(host, "ssl.gstatic.com") ||
+                dnsDomainIs(host, "waa-pa.clients6.google.com") ||
+                dnsDomainIs(host, "www.gstatic.com") ||
+                dnsDomainIs(host, "fonts.gstatic.com") ||
+                dnsDomainIs(host, "www.w3.org") ||
+                dnsDomainIs(host, "lh3.googleusercontent.com") ||
+                dnsDomainIs(host, "drivefrontend-pa.clients6.google.com") ||
+                dnsDomainIs(host, "signaler-pa.clients6.google.com") ||
+                dnsDomainIs(host, "people-pa.clients6.google.com") ||
+                dnsDomainIs(host, "chatgpt.com") ||
+
+
+
+
+
+
 
 
 		//IP Address List
