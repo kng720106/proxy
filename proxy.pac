@@ -97,8 +97,8 @@ function FindProxyForURL(url, host) {
                 dnsDomainIs(host, "notifications.googleapis.com") ||
                 dnsDomainIs(host, "ci3.googleusercontent.com") ||
                 dnsDomainIs(host, "gmail.com") ||
-
-
+                dnsDomainIs(host, "accounts.google.co.jp") ||
+                dnsDomainIs(host, "github.com") ||
 
 		//IP Address List
                 isInNet(host, "202.228.187.202", "255.255.255.255") ||
