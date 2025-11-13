@@ -13,7 +13,7 @@ function FindProxyForURL(url, host) {
     for (var i = 0; i < blocked_hosts.length; i++) {
         if (dnsDomainIs(host, blocked_hosts[i])) {
             // 一致した場合、存在しないプロキシに転送してアクセスをブロック
-            return "66.254.114.41";
+            return "PROXY 127.0.0.1:65535";
         }
     }
 
