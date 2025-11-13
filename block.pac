@@ -1,8 +1,8 @@
 function FindProxyForURL(url, host) {
     // ブロックしたいドメインのリスト（ここを編集してください）
     var blockedDomains = [
-        "example.com",
-        "block-site.org",
+        "www.youtube.com",
+        "x.com",
         "sub.another-domain.net"
     ];
 
