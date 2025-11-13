@@ -1,43 +1,19 @@
 function FindProxyForURL(url, host) {
-    // ブロック対象（シンプルに一覧を記載）
-    // 先頭に "." を付けるとそのドメインとサブドメイン全部をブロック
-    // ワイルドカードは shExpMatch で判定可能（例: "*.ads.example.com"）
-    var blacklist = [
-        "www.youtube.com",
-        "x.com"
+    // ブロックしたいドメインのリスト（ここを編集してください）
+    var blockedDomains = [
+        "example.com",
+        "block-site.org",
+        "sub.another-domain.net"
     ];
 
-    // ホストが IP リテラルかどうかを簡易判定
-    var isIP = /^\d+\.\d+\.\d+\.\d+$/.test(host);
-
-    for (var i = 0; i < blacklist.length; i++) {
-        var b = blacklist[i];
-
-        // IP 直接比較（ブラックリストにIPがある場合）
-        if (isIP && b === host) return "PROXY 127.0.0.1:9";
-
-        // ドメイン末尾一致（".example.com" 形式）
-        if (b.charAt(0) === ".") {
-            if (dnsDomainIs(host, b) || host === b.substring(1)) return "PROXY 127.0.0.1:9";
-            continue;
+    // アクセス先のホストがブロックリストに含まれるかチェック
+    for (var i = 0; i < blockedDomains.length; i++) {
+        if (dnsDomainIs(host, blockedDomains[i])) {
+            // ブロック対象の場合、存在しないプロキシに転送してアクセスを失敗させる
+            return "PROXY 127.0.0.1:65535";
         }
-
-        // ワイルドカード or シェル式マッチ
-        if (b.indexOf("*") !== -1 || b.indexOf("?") !== -1) {
-            if (shExpMatch(host, b)) return "PROXY 127.0.0.1:9";
-            continue;
-        }
-
-        // 完全一致（ホスト名）
-        if (host === b) return "PROXY 127.0.0.1:9";
     }
 
-    // ローカル / プライベート系は直接接続
-    if (isPlainHostName(host) || shExpMatch(host, "*.local") ||
-        shExpMatch(host, "localhost") ) {
-        return "DIRECT";
-    }
-
-    // デフォルトは直接接続
+    // ブロック対象でない場合は、プロキシを使わず直接接続
     return "DIRECT";
 }
