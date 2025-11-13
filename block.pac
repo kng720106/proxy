@@ -3,10 +3,8 @@ function FindProxyForURL(url, host) {
     // 先頭に "." を付けるとそのドメインとサブドメイン全部をブロック
     // ワイルドカードは shExpMatch で判定可能（例: "*.ads.example.com"）
     var blacklist = [
-        ".example.com",
-        "badsite.net",
-        "ads.tracker.io",
-        "192.0.2.1"
+        "www.youtube.com",
+        "x.com"
     ];
 
     // ホストが IP リテラルかどうかを簡易判定
