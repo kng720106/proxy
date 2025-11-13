@@ -1,12 +1,22 @@
 function FindProxyForURL(url, host) {
-    // ワイルドカードを使用してブロックしたいドメインパターンを指定
-    if (shExpMatch(host, "www.youtube.com") ||
-        shExpMatch(host, "x.com") ||
-        shExpMatch(host, "*.ad-server.net")) {
-        // パターンに一致した場合、存在しないプロキシに転送してアクセスをブロック
-        return "PROXY 127.0.0.1:65535";
+
+    // --- ブラックリスト ---
+    // ここにブロックしたいドメインを追加してください。
+    // "example.com" と書けば "www.example.com" も対象になります。
+    var blocked_hosts = [
+        "youtube.com",
+        "x.com,
+        "twitter.com"
+    ];
+
+    // ブラックリスト内のドメインと一致するかチェック
+    for (var i = 0; i < blocked_hosts.length; i++) {
+        if (dnsDomainIs(host, blocked_hosts[i])) {
+            // 一致した場合、存在しないプロキシに転送してアクセスをブロック
+            return "PROXY 127.0.0.1:65535";
+        }
     }
 
-    // 上記のいずれにも一致しない場合は、直接接続を許可
+    // ブラックリストにない場合は、プロキシを使わず直接接続
     return "DIRECT";
 }
