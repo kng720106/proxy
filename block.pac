@@ -5,7 +5,7 @@ function FindProxyForURL(url, host) {
     // "example.com" と書けば "www.example.com" も対象になります。
     var blocked_hosts = [
         "www.youtube.com",
-        "x.com,
+        "x.com",
         "twitter.com"
     ];
 
